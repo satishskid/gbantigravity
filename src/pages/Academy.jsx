@@ -4,6 +4,9 @@ import SEO from '../components/SEO';
 import medicalAiImg from '../assets/course_medical_ai.png';
 import physcipreneurImg from '../assets/course_physcipreneur.png';
 import spiritualAiImg from '../assets/course_spiritual_ai.png';
+import { PLATFORM_URLS } from '../constants';
+
+const { EMAIL_CONTACT, LMS: LMS_URL } = PLATFORM_URLS;
 
 const FeatureList = ({ items, color = "text-gray-900" }) => (
     <div className="space-y-3 my-6">
