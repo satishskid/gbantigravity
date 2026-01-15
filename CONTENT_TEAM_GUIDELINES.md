@@ -83,10 +83,42 @@ For the **Lens** page, we display a "Daily Intelligence Briefing" at the top. Th
 
 ---
 
-## 4. Summary Checklist for Editors
-*   [ ] Does the Clinical article have a `[[MODEL: ...]]` tag?
-*   [ ] Does the Clinical article have a `[[PROMPT: ...]]` tag?
-*   [ ] Does the Soul article have a `[[SOUL_HACK: ...]]` tag?
-*   [ ] Does the Lens post have a `[[LENS_NARRATIVE: ...]]` tag?
+---
 
-**Note:** The text inside the brackets `[[ ... ]]` will appear **EXACTLY** as typed on the website. Keep it clean.
+## 4. THE COPY-PASTE CHEAT SHEET (Use This!)
+
+**Instructions:** 
+1. Go to the very bottom of your Medium article.
+2. Hit "Enter" to create a new line.
+3. **Copy the exact block below** for your category.
+4. Replace the text inside the brackets with your content.
+5. **Publish.**
+
+### 🏥 For ClinicalAI (@GreyBrain Posts)
+*Copy this block and fill it in:*
+```text
+[[MODEL: Model Name (e.g. DeepSeek-V3)]]
+[[PROMPT: Paste your full prompt here. It can be long.]]
+```
+
+### 🧘 For SoulAI (@Sage_AI Posts)
+*Copy this block and fill it in:*
+```text
+[[SOUL_HACK: Actionable advice here. e.g. "Take a 5-min walk."]]
+```
+
+### 🎬 For Lens (@GreyBrainer Posts)
+*Copy this block and fill it in:*
+```text
+[[LENS_NARRATIVE:
+🎬 Today's Morning Brief: Jan 15, 2026
+
+1. Trending Now
+Movie Name (Platform): Short summary.
+
+2. Critical View
+Movie Name (Platform): Why it matters.
+]]
+```
+
+**⚠️ IMPORTANT:** Do not change the spelling of `[[MODEL:` or `[[PROMPT:` etc. The website robot matches these exact words.
