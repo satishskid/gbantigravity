@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreyBrain - Official Invitation</title>
+    <style>
+        :root {
+            --bg-color: #0F1115;
+            --card-bg: #1A1D23;
+            --text-primary: #FFFFFF;
+            --text-secondary: #9CA3AF;
+            --accent: #3B82F6;
+            /* Blue for Medical/Tech */
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-primary);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 400px;
+            /* Mobile Friendly Width */
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        /* Top Decoration */
+        .header-glow {
+            height: 6px;
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+            width: 100%;
+        }
+
+        .content {
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--text-secondary);
+        }
+
+        .subtitle {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .course-title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            background: linear-gradient(to right, #fff, #ccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .description {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px 0;
+        }
+
+        .details-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .label {
+            color: var(--text-secondary);
+        }
+
+        .value {
+            font-weight: 600;
+        }
+
+        .qr-placeholder {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            display: inline-block;
+            margin: 24px 0;
+            position: relative;
+        }
+
+        /* Simulating QR Presence */
+        .qr-mock {
+            width: 140px;
+            height: 140px;
+            background-image: url('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://learn.greybrain.ai');
+            background-size: cover;
+        }
+
+        .scan-text {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        .cta-button {
+            display: block;
+            background: var(--text-primary);
+            color: var(--bg-color);
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-top: 16px;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="header-glow"></div>
+        <div class="content">
+            <div class="logo">GreyBrain<span>.ai</span></div>
+            <div class="subtitle">Official Enrollment</div>
+
+            <h1 class="course-title">GenAI Institute:<br>Fellowship</h1>
+
+            <p class="description">
+                You have been invited to join the upcoming cohort. Master medical LLMs and build the future of clinical
+                practice.
+            </p>
+
+            <div class="qr-placeholder">
+                <!-- Replace this URL with your actual LMS Payment QR Link -->
+                <div class="qr-mock"></div>
+            </div>
+            <div class="scan-text">Scan to pay securely via GreyBrain LMS</div>
+
+            <div class="divider"></div>
+
+            <div class="details-row">
+                <span class="label">Duration</span>
+                <span class="value">12 Weeks</span>
+            </div>
+            <div class="details-row">
+                <span class="label">Format</span>
+                <span class="value">Live + Async</span>
+            </div>
+            <div class="details-row">
+                <span class="label">Valid Until</span>
+                <span class="value">48 Hours</span>
+            </div>
+
+            <a href="https://learn.greybrain.ai" class="cta-button">
+                Click to Pay Online
+            </a>
+
+            <div class="footer">
+                Secured by GreyBrain LMS • Support: admin@greybrain.ai
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
