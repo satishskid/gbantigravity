@@ -56,9 +56,37 @@ Every time you write a reflection or philosophical piece, include **ONE** invisi
 
 ---
 
-## 3. Summary Checklist for Editors
+## 3. Writing for "Lens" (Cinema & Culture)
+
+For the **Lens** page, we display a "Daily Intelligence Briefing" at the top. This is a longer, multi-paragraph summary.
+
+### The Tag to Copy-Paste:
+1.  **The Narrative Tag:**
+    *   **Format:** `[[LENS_NARRATIVE: Paste your full text here]]`
+    *   *Note:* You can include newlines and multiple paragraphs inside the brackets.
+    *   *Where:* Bottom of article.
+
+### Example Article Structure:
+> **Title:** Review: The Smuggler's Web
+>
+> **Body:** ... (Your normal movie review) ...
+>
+> **Footer (Crucial for Website):**
+> `[[LENS_NARRATIVE:`
+> `🎬 Today's Morning Brief: Jan 15, 2026`
+>
+> `1. Most Popular`
+> `Taskaree: The Smuggler's Web (Netflix) is trending #1.`
+>
+> `2. Most Critiqued`
+> `Haq (Netflix): A courtroom drama...]]`
+
+---
+
+## 4. Summary Checklist for Editors
 *   [ ] Does the Clinical article have a `[[MODEL: ...]]` tag?
 *   [ ] Does the Clinical article have a `[[PROMPT: ...]]` tag?
 *   [ ] Does the Soul article have a `[[SOUL_HACK: ...]]` tag?
+*   [ ] Does the Lens post have a `[[LENS_NARRATIVE: ...]]` tag?
 
-**Note:** The text inside the brackets `[[ ... ]]` will appear **EXACTLY** as typed on the website's homepage. Keep it clean, short, and punchy.
+**Note:** The text inside the brackets `[[ ... ]]` will appear **EXACTLY** as typed on the website. Keep it clean.

@@ -10,16 +10,20 @@ export const extractPreview = (content, limit = 150) => {
 };
 
 // NEW: Extract Special Metadata from Blog Content
+// NEW: Extract Special Metadata from Blog Content
 export const extractMetadata = (content) => {
-    // Look for content inside double square brackets
-    const promptMatch = content.match(/\[\[PROMPT:\s*(.*?)\]\]/);
-    const modelMatch = content.match(/\[\[MODEL:\s*(.*?)\]\]/);
-    const soulMatch = content.match(/\[\[SOUL_HACK:\s*(.*?)\]\]/);
+    // Look for content inside double square brackets. 
+    // Uses [\s\S]*? to match across newlines (for long prompts/narratives)
+    const promptMatch = content.match(/\[\[PROMPT:\s*([\s\S]*?)\]\]/);
+    const modelMatch = content.match(/\[\[MODEL:\s*([\s\S]*?)\]\]/);
+    const soulMatch = content.match(/\[\[SOUL_HACK:\s*([\s\S]*?)\]\]/);
+    const narrativeMatch = content.match(/\[\[LENS_NARRATIVE:\s*([\s\S]*?)\]\]/);
 
     return {
-        prompt: promptMatch ? promptMatch[1] : null,
-        model: modelMatch ? modelMatch[1] : null,
-        soulHack: soulMatch ? soulMatch[1] : null
+        prompt: promptMatch ? promptMatch[1].trim() : null,
+        model: modelMatch ? modelMatch[1].trim() : null,
+        soulHack: soulMatch ? soulMatch[1].trim() : null,
+        narrative: narrativeMatch ? narrativeMatch[1].trim() : null
     };
 };
 
@@ -49,7 +53,8 @@ export const fetchMediumFeed = async (feedUrl) => {
                 // Attach extracted data
                 customPrompt: metadata.prompt,
                 customModel: metadata.model,
-                customSoulHack: metadata.soulHack
+                customSoulHack: metadata.soulHack,
+                customNarrative: metadata.narrative
             };
         });
     } catch (error) {

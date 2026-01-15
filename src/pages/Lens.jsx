@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Play, Loader } from 'lucide-react';
+import { Play, Loader, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import { fetchMediumFeed } from '../utils/mediumService';
 
@@ -40,15 +40,26 @@ const MovieCard = ({ title, aspect, thumbnail, link, delay }) => (
 export default function Lens() {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
+    // NEW: State for Dynamic Narrative Object
+    const [narrativePost, setNarrativePost] = useState(null);
 
     useEffect(() => {
         const loadContent = async () => {
             const data = await fetchMediumFeed('https://medium.com/feed/@GreyBrainer');
+
+            // FIND LATEST NARRATIVE
+            const foundNarrative = data.find(p => p.customNarrative);
+            setNarrativePost(foundNarrative);
+
             setArticles(data);
             setLoading(false);
         };
         loadContent();
     }, []);
+
+    // Default Fallback Narrative if none found
+    const activeText = narrativePost ? narrativePost.customNarrative :
+        "🎬 Today's Morning Brief: Jan 15, 2026\n\n1. Most Popular (Mass Appeal & Binge-Watching)\nTaskaree: The Smuggler's Web (Netflix) is trending #1. A gritty procedural that balances star power with realism.\n\n2. Most Critiqued\nHaq (Netflix): A courtroom drama praised for performances but debated for legal accuracy.\n\n3. Social Topics\nThe 'Parasakthi' Controversy: A goldmine for 'Creative Liberty vs. Political History' analysis.";
 
     return (
         <div className="bg-black min-h-screen text-white pb-20">
@@ -57,12 +68,45 @@ export default function Lens() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mb-16 max-w-2xl"
+                    className="mb-12 max-w-2xl"
                 >
                     <h1 className="text-5xl md:text-6xl font-heading font-bold mb-6">GreyBrain Lens (@GreyBrainer)</h1>
                     <p className="text-xl text-gray-400">
                         Decoding Culture. An academic analysis of Indian Cinema and OTT through psychoanalytic and sociological frameworks.
                     </p>
+                </motion.div>
+
+                {/* NEW: Ongoing Narrative Section */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="bg-gray-900 border-l-4 border-red-600 rounded-r-xl p-8 mb-20 relative overflow-hidden"
+                >
+                    <div className="relative z-10">
+                        <div className="flex items-center gap-3 mb-6">
+                            <span className="flex h-3 w-3">
+                                <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-red-500 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
+                            </span>
+                            <span className="text-xs font-bold text-red-500 uppercase tracking-widest">Live Intelligence Briefing</span>
+                        </div>
+
+                        <div className="prose prose-invert prose-lg max-w-none text-gray-300 whitespace-pre-wrap font-sans leading-relaxed mb-6">
+                            {activeText}
+                        </div>
+
+                        {narrativePost && (
+                            <a
+                                href={narrativePost.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm font-bold text-red-400 hover:text-red-300 transition-colors uppercase tracking-wider flex items-center gap-2"
+                            >
+                                Read full brief on Medium <ArrowRight size={14} />
+                            </a>
+                        )}
+                    </div>
                 </motion.div>
 
                 {loading ? (
@@ -71,16 +115,19 @@ export default function Lens() {
                     </div>
                 ) : articles.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {articles.map((post, index) => (
-                            <MovieCard
-                                key={index}
-                                title={post.title}
-                                aspect={post.categories[0] || "Cultural Analysis"}
-                                thumbnail={post.thumbnail}
-                                link={post.link}
-                                delay={0.1 * index}
-                            />
-                        ))}
+                        {/* Filter OUT the narrative post so it doesn't appear twice */}
+                        {articles
+                            .filter(post => post !== narrativePost)
+                            .map((post, index) => (
+                                <MovieCard
+                                    key={index}
+                                    title={post.title}
+                                    aspect={post.categories[0] || "Cultural Analysis"}
+                                    thumbnail={post.thumbnail}
+                                    link={post.link}
+                                    delay={0.1 * index}
+                                />
+                            ))}
                     </div>
                 ) : (
                     <div className="text-gray-500 text-center py-20">
