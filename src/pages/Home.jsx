@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Stethoscope, Brain, Film, ArrowRight, Activity, Cpu } from 'lucide-react';
+import { Stethoscope, Brain, Film, ArrowRight, Activity, Cpu, Users, Rocket } from 'lucide-react';
 import FeatureCard from '../components/FeatureCard';
 import SEO from '../components/SEO';
 import brainImage from '../assets/hero-brain.png';
