@@ -71,86 +71,146 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* The Intelligence Dock - Jony Ive Style */}
+            {/* The Intelligence Dock - Refined Cognition Rail */}
             <section className="bg-white border-b border-gray-100 py-12">
                 <div className="container">
-                    <div className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+                    <div className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl flex flex-col xl:flex-row">
 
-                        {/* Zone A: The Anchor (Purpose) */}
-                        <div className="lg:w-[30%] p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-gray-800 bg-gray-900 overflow-hidden relative group">
-                            <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-10 transition-opacity">
-                                <ArrowRight className="text-white w-6 h-6 -rotate-45" />
+                        {/* Zone A: The Core Message (Anchor) */}
+                        <div className="xl:w-[28%] p-8 lg:p-10 border-b xl:border-b-0 xl:border-r border-gray-800 bg-gray-900 flex flex-col justify-between relative group min-h-[200px]">
+                            {/* Top Row: Label & Action */}
+                            <div className="flex items-center justify-between mb-8">
+                                <span className="text-[10px] font-bold tracking-[0.25em] text-gray-500 uppercase">
+                                    Academy
+                                </span>
+                                <Link to="/academy" className="text-[10px] font-bold text-white/70 hover:text-white transition-colors flex items-center gap-1 uppercase tracking-wider">
+                                    View Schedule <ArrowRight size={12} />
+                                </Link>
                             </div>
 
-                            <div className="relative z-10 flex flex-col justify-between h-full">
-                                <div>
-                                    <span className="text-[10px] font-bold tracking-[0.25em] text-gray-500 uppercase block mb-3">
-                                        Academy
-                                    </span>
-                                    <h2 className="text-2xl font-medium text-white tracking-tight leading-snug">
-                                        Sync with the<br /><span className="text-gray-400">Future.</span>
-                                    </h2>
-                                </div>
-                                <div className="mt-8">
-                                    <Link to="/academy" className="text-xs font-bold text-white border-b border-gray-600 pb-1 hover:border-white transition-colors inline-flex items-center gap-2">
-                                        View Full Schedule
-                                    </Link>
-                                </div>
+                            {/* Middle: Headline */}
+                            <div className="mb-6">
+                                <h2 className="text-3xl font-medium text-white tracking-tight leading-none mb-4">
+                                    Sync with the<br /><span className="text-gray-500">Future.</span>
+                                </h2>
+                            </div>
+
+                            {/* Bottom: The Explainer */}
+                            <div>
+                                <p className="text-sm text-gray-400 font-light leading-relaxed max-w-xs">
+                                    Unlock the infinite potential of valid creativity. We bridge biological intuition with computational scale to realize the full spectrum of human potential.
+                                </p>
                             </div>
                         </div>
 
-                        {/* Zone B: The Pathways (Grid) */}
-                        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-gray-800 bg-gray-900">
+                        {/* Zone B: The Pathways (Expanded Grid) */}
+                        <div className="flex-1 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 divide-y md:divide-y-0 divide-x divide-gray-800 bg-gray-900 border-t xl:border-t-0 border-gray-800">
 
                             {/* Module 1: Institutional */}
-                            <Link to="/academy" className="group p-8 hover:bg-gray-800 transition-colors flex flex-col justify-center min-h-[140px]">
-                                <span className="text-[9px] font-bold text-blue-500 uppercase tracking-widest mb-2 opacity-80">
-                                    Medical Colleges
-                                </span>
-                                <h3 className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">
+                            <Link to="/academy" className="group p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between min-h-[160px] relative overflow-hidden">
+                                <div className="absolute top-4 right-4 text-gray-800 group-hover:text-blue-500/20 transition-colors duration-500">
+                                    <Activity size={40} strokeWidth={1} />
+                                </div>
+                                <span className="text-[9px] font-bold text-blue-500 uppercase tracking-widest opacity-80 z-10">
                                     Institutional
-                                </h3>
-                                <div className="h-0 group-hover:h-4 overflow-hidden transition-all duration-300">
-                                    <p className="text-[10px] text-gray-400 pt-1">Student & Faculty Curriculum</p>
+                                </span>
+                                <div className="z-10">
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1">
+                                        Medical Colleges
+                                    </h3>
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                        Faculty Curriculum
+                                    </p>
                                 </div>
                             </Link>
 
                             {/* Module 2: Community */}
-                            <Link to="/academy" className="group p-8 hover:bg-gray-800 transition-colors flex flex-col justify-center min-h-[140px]">
-                                <span className="text-[9px] font-bold text-green-500 uppercase tracking-widest mb-2 opacity-80">
-                                    Associations
-                                </span>
-                                <h3 className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">
+                            <Link to="/academy" className="group p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between min-h-[160px] relative overflow-hidden">
+                                <div className="absolute top-4 right-4 text-gray-800 group-hover:text-green-500/20 transition-colors duration-500">
+                                    <Users size={40} strokeWidth={1} />
+                                </div>
+                                <span className="text-[9px] font-bold text-green-500 uppercase tracking-widest opacity-80 z-10">
                                     Community
-                                </h3>
-                                <div className="h-0 group-hover:h-4 overflow-hidden transition-all duration-300">
-                                    <p className="text-[10px] text-gray-400 pt-1">Practitioner Workshops</p>
+                                </span>
+                                <div className="z-10">
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1">
+                                        Professional Groups
+                                    </h3>
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                        Practitioner Workshops
+                                    </p>
                                 </div>
                             </Link>
 
                             {/* Module 3: Express */}
-                            <Link to="/academy" className="group p-8 hover:bg-gray-800 transition-colors flex flex-col justify-center min-h-[140px]">
-                                <span className="text-[9px] font-bold text-purple-500 uppercase tracking-widest mb-2 opacity-80">
-                                    Sprint: 2 Weeks
+                            <Link to="/academy" className="group p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between min-h-[160px] relative overflow-hidden">
+                                <div className="absolute top-4 right-4 text-gray-800 group-hover:text-purple-500/20 transition-colors duration-500">
+                                    <Cpu size={40} strokeWidth={1} />
+                                </div>
+                                <span className="text-[9px] font-bold text-purple-500 uppercase tracking-widest opacity-80 z-10">
+                                    Sprint
                                 </span>
-                                <h3 className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">
-                                    GenAI Express
-                                </h3>
-                                <div className="h-0 group-hover:h-4 overflow-hidden transition-all duration-300">
-                                    <p className="text-[10px] text-gray-400 pt-1">Rapid Mastery Program</p>
+                                <div className="z-10">
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1">
+                                        GenAI Express
+                                    </h3>
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                        2-Week Mastery
+                                    </p>
                                 </div>
                             </Link>
 
                             {/* Module 4: Venture */}
-                            <Link to="/academy" className="group p-8 hover:bg-gray-800 transition-colors flex flex-col justify-center min-h-[140px]">
-                                <span className="text-[9px] font-bold text-gold uppercase tracking-widest mb-2 opacity-80">
+                            <Link to="/academy" className="group p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between min-h-[160px] relative overflow-hidden">
+                                <div className="absolute top-4 right-4 text-gray-800 group-hover:text-amber-500/20 transition-colors duration-500">
+                                    <Rocket size={40} strokeWidth={1} />
+                                </div>
+                                <span className="text-[9px] font-bold text-gold uppercase tracking-widest opacity-80 z-10">
                                     Venture
                                 </span>
-                                <h3 className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">
-                                    PhyScipreneur
-                                </h3>
-                                <div className="h-0 group-hover:h-4 overflow-hidden transition-all duration-300">
-                                    <p className="text-[10px] text-gray-400 pt-1">No-Code Startup Incubator</p>
+                                <div className="z-10">
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1">
+                                        PhyScipreneur
+                                    </h3>
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                        No-Code Incubator
+                                    </p>
+                                </div>
+                            </Link>
+
+                            {/* Module 5: Soul */}
+                            <Link to="/soul" className="group p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between min-h-[160px] relative overflow-hidden">
+                                <div className="absolute top-4 right-4 text-gray-800 group-hover:text-orange-500/20 transition-colors duration-500">
+                                    <Brain size={40} strokeWidth={1} />
+                                </div>
+                                <span className="text-[9px] font-bold text-orange-500 uppercase tracking-widest opacity-80 z-10">
+                                    Spirit
+                                </span>
+                                <div className="z-10">
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1">
+                                        Ancient Wisdom
+                                    </h3>
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                        Cognitive Peace
+                                    </p>
+                                </div>
+                            </Link>
+
+                            {/* Module 6: Lens */}
+                            <Link to="/lens" className="group p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between min-h-[160px] relative overflow-hidden">
+                                <div className="absolute top-4 right-4 text-gray-800 group-hover:text-pink-500/20 transition-colors duration-500">
+                                    <Film size={40} strokeWidth={1} />
+                                </div>
+                                <span className="text-[9px] font-bold text-pink-500 uppercase tracking-widest opacity-80 z-10">
+                                    Creative
+                                </span>
+                                <div className="z-10">
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1">
+                                        Lens & Cinema
+                                    </h3>
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                        The Art of AI
+                                    </p>
                                 </div>
                             </Link>
 
