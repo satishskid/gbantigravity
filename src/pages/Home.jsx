@@ -121,7 +121,7 @@ export default function Home() {
                                     <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
                                         Medical<br />Colleges
                                     </h3>
-                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors truncate">
                                         Faculty Curriculum
                                     </p>
                                 </div>
@@ -141,8 +141,8 @@ export default function Home() {
                                     <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
                                         Professional<br />Groups
                                     </h3>
-                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
-                                        Practitioner Workshops
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors truncate">
+                                        For Busy Practitioners
                                     </p>
                                 </div>
                             </Link>
@@ -161,7 +161,7 @@ export default function Home() {
                                     <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
                                         GenAI<br />Express
                                     </h3>
-                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors truncate">
                                         2-Week Mastery
                                     </p>
                                 </div>
@@ -181,7 +181,7 @@ export default function Home() {
                                     <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
                                         Physician-Scientist<br />Entrepreneur
                                     </h3>
-                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors truncate">
                                         No-Code Incubator
                                     </p>
                                 </div>
@@ -201,7 +201,7 @@ export default function Home() {
                                     <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
                                         Ancient<br />Wisdom
                                     </h3>
-                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors truncate">
                                         Cognitive Peace
                                     </p>
                                 </div>
@@ -221,7 +221,7 @@ export default function Home() {
                                     <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
                                         Lens &<br />Cinema
                                     </h3>
-                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
+                                    <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors truncate">
                                         The Art of AI
                                     </p>
                                 </div>
