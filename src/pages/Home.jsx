@@ -179,7 +179,7 @@ export default function Home() {
                                 </div>
                                 <div className="z-10 mt-auto w-full">
                                     <h3 className="text-xs tracking-tighter font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
-                                        Physician-Scientist-<br />Entrepreneur
+                                        Phy-Sci-<br />Entrepreneur
                                     </h3>
                                     <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors truncate">
                                         No-Code Incubator
