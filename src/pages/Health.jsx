@@ -33,7 +33,8 @@ export default function Health() {
 
     useEffect(() => {
         const loadContent = async () => {
-            const data = await fetchMediumFeed('https://medium.com/feed/@GreyBrain');
+            // FIXED: Use correct feed handle
+            const data = await fetchMediumFeed('https://medium.com/feed/@ClinicalAI');
             setArticles(data);
 
             // FIND THE LATEST HACK FROM BLOGS
@@ -43,7 +44,26 @@ export default function Health() {
             setActivePrompt(latestWithPrompt ? latestWithPrompt.customPrompt :
                 "Act as a senior radiologist. I will provide an MRI report text. Simplify the findings into a 5th-grade reading level explanation...");
 
-            setActiveModel(latestWithModel ? latestWithModel.customModel : "DeepSeek-R1 (Default)");
+            // Parse Model Data exactly like Lab.jsx
+            if (latestWithModel && latestWithModel.customModel) {
+                const parts = latestWithModel.customModel.split('|');
+                if (parts.length >= 3) {
+                    setActiveModel({
+                        name: parts[0]?.trim(),
+                        tag: parts[1]?.trim(),
+                        desc: parts[2]?.trim(),
+                        url: parts[3]?.trim() || latestWithModel.link
+                    });
+                } else {
+                    setActiveModel({ name: latestWithModel.customModel, tag: 'AI Model', desc: 'Trending on HuggingFace' });
+                }
+            } else {
+                setActiveModel({
+                    name: "DeepSeek-R1 (Default)",
+                    tag: "Reasoning",
+                    desc: "Trending on HuggingFace"
+                });
+            }
 
             setLoading(false);
         };
@@ -144,8 +164,21 @@ export default function Health() {
                             <div className="flex items-center gap-2 text-blue-400 mb-4 text-xs font-bold uppercase tracking-widest">
                                 <Boxes size={16} /> Model of the Day
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-2">{activeModel}</h3>
-                            <div className="text-xs text-slate-400 mb-4">Trending on HuggingFace</div>
+
+                            {activeModel && (
+                                <>
+                                    <div className="flex items-center gap-2 mb-2">
+                                        <span className="px-2 py-1 bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase rounded">
+                                            {activeModel.tag || 'AI Model'}
+                                        </span>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-white mb-2">{activeModel.name}</h3>
+                                    <p className="text-sm text-slate-400 mb-4 leading-relaxed">
+                                        {activeModel.desc}
+                                    </p>
+                                </>
+                            )}
+
                             <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                         </div>
 
