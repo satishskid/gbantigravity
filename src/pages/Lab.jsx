@@ -140,6 +140,16 @@ export default function Lab() {
                 const newFeeds = {};
                 let allArticles = [];
 
+                feedResults.forEach(feed => {
+                    newFeeds[feed.id] = feed.items;
+                    allArticles = allArticles.concat(feed.items);
+                });
+
+                // Sort purely by date to get the absolute latest across ALL channels
+                allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                const topArticle = allArticles.length > 0 ? allArticles[0] : null;
+
                 // 2. Extract Aggregated Intelligence (Model + Prompt)
                 let foundPrompt = null;
                 let foundModel = null;
@@ -179,12 +189,6 @@ export default function Lab() {
                     model: foundModel,
                     prompt: foundPrompt
                 });
-
-                // 2. Fetch Aggregated Intelligence (Model + Prompt)
-                const [trendingModel, generatedPrompt] = await Promise.all([
-                    fetchTrendingModel(),
-                    generateDailyPrompt(topArticle ? topArticle.title : 'AI in Healthcare')
-                ]);
 
                 setDailyData({
                     model: trendingModel,
