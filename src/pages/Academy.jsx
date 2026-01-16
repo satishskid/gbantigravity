@@ -89,7 +89,7 @@ export default function Academy() {
                                     <div className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-6">Institutional Edition</div>
 
                                     <p className="text-gray-600 mb-6 leading-relaxed">
-                                        Empower the next generation. A single-day immersion for medical students and faculty into the anatomy of LLMs.
+                                        Secure the future of your institution. A comprehensive curriculum designed for Medical Colleges to equip students and faculty with essential AI literacy and research capabilities.
                                     </p>
 
                                     <FeatureList items={[
@@ -119,7 +119,7 @@ export default function Academy() {
                                     <div className="text-xs font-bold text-green-600 uppercase tracking-widest mb-6">Community Edition</div>
 
                                     <p className="text-gray-600 mb-6 leading-relaxed">
-                                        For specialty networks and associations. Enable confident, safe adoption in daily clinical workflows.
+                                        Unity in innovation. Tailored workshops for Professional Groups and Associations to help busy practitioners safely integrate GenAI into their daily clinical practice.
                                     </p>
 
                                     <FeatureList items={[
@@ -160,8 +160,9 @@ export default function Academy() {
                                     <span className="text-sm font-medium text-gray-400">2 Weeks • Cohort Based</span>
                                 </div>
                                 <h3 className="text-4xl font-heading font-bold text-gray-900 mb-4">GenAI Express</h3>
+                                <div className="text-blue-600 font-bold tracking-tight text-sm uppercase mb-6">The essential rapid-mastery program for clinicians to decode Generative AI.</div>
                                 <p className="text-lg text-gray-500 mb-8 leading-relaxed">
-                                    Transform your medical practice. Master the anatomy of LLMs, build super-agents for document creation, and strengthen your academic output. The essential bridge between medicine and machine.
+                                    Transform your medical practice in just 2 weeks. Master the anatomy of LLMs, build custom super-agents for documentation, and accelerate your research output. Zero coding required.
                                 </p>
 
                                 <div className="grid grid-cols-2 gap-6 mb-10">
@@ -200,10 +201,10 @@ export default function Academy() {
                                     <span className="text-sm font-medium text-gray-400">12 Weeks • MVP Builder</span>
                                 </div>
                                 <h3 className="text-4xl font-heading font-bold text-white mb-2">PhyScipreneur</h3>
-                                <div className="text-gold font-bold tracking-[0.2em] text-sm uppercase mb-6">The Doctor's MBA</div>
+                                <div className="text-gold font-bold tracking-[0.2em] text-sm uppercase mb-6">From Stethoscope to Start-up</div>
                                 <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                                    The "I² Formula": Individualisation × Industrialisation.
-                                    An intensive program transforming clinical expertise into scalable ventures. We combine academic rigor with VC investment criteria to build the next generation of healthcare solutions.
+                                    A hands-on, practical incubator designed <strong>by Doctor-Scientists for Doctors</strong>.
+                                    Learn to build functional MVP prototypes without writing code and master the business of innovation. Turn your clinical insights into scalable solutions.
                                 </p>
 
                                 <div className="space-y-3 mb-10">

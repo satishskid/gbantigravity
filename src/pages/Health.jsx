@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal, Loader, Boxes, ExternalLink, Activity, Sparkles, Utensils } from 'lucide-react';
+import { ArrowRight, Terminal, Loader, Boxes, ExternalLink, Activity, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { fetchMediumFeed } from '../utils/mediumService';
@@ -21,14 +21,6 @@ const INNOVATIONS = [
         icon: Activity,
         color: "text-blue-500",
         bg: "bg-blue-50"
-    },
-    {
-        name: "NutreeAI",
-        desc: "AI-powered nutritional analysis tool creating personalized meal plans for child development.",
-        url: "https://nutreeai.greybrain.ai/greybrain",
-        icon: Utensils,
-        color: "text-emerald-500",
-        bg: "bg-emerald-50"
     }
 ];
 
