@@ -11,6 +11,28 @@ export const extractPreview = (content, limit = 150) => {
 
 // NEW: Extract Special Metadata from Blog Content
 // NEW: Extract Special Metadata from Blog Content
+const cleanText = (text) => {
+    if (!text) return null;
+    // 1. Replace block breaks with newlines
+    let cleaned = text
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<\/p>/gi, '\n')
+        .replace(/<\/div>/gi, '\n');
+
+    // 2. Strip remaining HTML tags
+    cleaned = cleaned.replace(/<[^>]+>/g, '');
+
+    // 3. Decode basic entities (optional but good)
+    cleaned = cleaned
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"');
+
+    return cleaned.trim();
+};
+
 export const extractMetadata = (content) => {
     // Look for content inside double square brackets. 
     // Uses [\s\S]*? to match across newlines (for long prompts/narratives)
@@ -20,10 +42,10 @@ export const extractMetadata = (content) => {
     const narrativeMatch = content.match(/\[\[LENS_NARRATIVE:\s*([\s\S]*?)\]\]/);
 
     return {
-        prompt: promptMatch ? promptMatch[1].trim() : null,
-        model: modelMatch ? modelMatch[1].trim() : null,
-        soulHack: soulMatch ? soulMatch[1].trim() : null,
-        narrative: narrativeMatch ? narrativeMatch[1].trim() : null
+        prompt: cleanText(promptMatch ? promptMatch[1] : null),
+        model: cleanText(modelMatch ? modelMatch[1] : null),
+        soulHack: cleanText(soulMatch ? soulMatch[1] : null),
+        narrative: cleanText(narrativeMatch ? narrativeMatch[1] : null)
     };
 };
 
