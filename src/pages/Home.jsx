@@ -71,64 +71,89 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* Ongoing Programs Section */}
+            {/* The Intelligence Dock - Jony Ive Style */}
             <section className="bg-white border-b border-gray-100 py-12">
                 <div className="container">
-                    <div className="bg-gray-900 rounded-[2rem] p-8 md:p-12 shadow-2xl text-white relative overflow-hidden">
-                        {/* Abstract BG Shape */}
-                        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+                    <div className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
 
-                        <div className="relative z-10 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
-                            <div>
-                                <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-gold mb-3">
-                                    Academy Highlights
-                                </span>
-                                <h2 className="text-3xl md:text-4xl font-heading font-medium text-white">
-                                    Ongoing Programs
-                                </h2>
+                        {/* Zone A: The Anchor (Purpose) */}
+                        <div className="lg:w-[30%] p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-gray-800 bg-gray-900 overflow-hidden relative group">
+                            <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-10 transition-opacity">
+                                <ArrowRight className="text-white w-6 h-6 -rotate-45" />
                             </div>
-                            <Link to="/academy" className="btn bg-white text-gray-900 px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:bg-gray-50 transition-all whitespace-nowrap font-bold flex items-center self-start md:self-auto group text-sm">
-                                View Full Schedule <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                            </Link>
+
+                            <div className="relative z-10 flex flex-col justify-between h-full">
+                                <div>
+                                    <span className="text-[10px] font-bold tracking-[0.25em] text-gray-500 uppercase block mb-3">
+                                        Academy
+                                    </span>
+                                    <h2 className="text-2xl font-medium text-white tracking-tight leading-snug">
+                                        Sync with the<br /><span className="text-gray-400">Future.</span>
+                                    </h2>
+                                </div>
+                                <div className="mt-8">
+                                    <Link to="/academy" className="text-xs font-bold text-white border-b border-gray-600 pb-1 hover:border-white transition-colors inline-flex items-center gap-2">
+                                        View Full Schedule
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            {/* GenAI Institute */}
-                            <div className="group p-5 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
-                                <div className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Institutional</div>
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-200 transition-colors">GenAI Institute</h3>
-                                <p className="text-sm text-gray-400 leading-relaxed">
-                                    Curriculum for Medical Colleges. Equipping students & faculty with essential AI literacy.
-                                </p>
-                            </div>
+                        {/* Zone B: The Pathways (Grid) */}
+                        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-gray-800 bg-gray-900">
 
-                            {/* Community Edition */}
-                            <div className="group p-5 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-green-500/30 transition-all duration-300">
-                                <div className="text-xs font-bold text-green-400 uppercase tracking-wider mb-2">Professional Groups</div>
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-200 transition-colors">Community Edition</h3>
-                                <p className="text-sm text-gray-400 leading-relaxed">
-                                    Tailored workshops for busy practitioners to safely integrate AI into daily practice.
-                                </p>
-                            </div>
+                            {/* Module 1: Institutional */}
+                            <Link to="/academy" className="group p-8 hover:bg-gray-800 transition-colors flex flex-col justify-center min-h-[140px]">
+                                <span className="text-[9px] font-bold text-blue-500 uppercase tracking-widest mb-2 opacity-80">
+                                    Medical Colleges
+                                </span>
+                                <h3 className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">
+                                    Institutional
+                                </h3>
+                                <div className="h-0 group-hover:h-4 overflow-hidden transition-all duration-300">
+                                    <p className="text-[10px] text-gray-400 pt-1">Student & Faculty Curriculum</p>
+                                </div>
+                            </Link>
 
-                            {/* GenAI Express */}
-                            <div className="group p-5 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300">
-                                <div className="text-xs font-bold text-purple-400 uppercase tracking-wider mb-2">2-Week Sprint</div>
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-200 transition-colors">GenAI Express</h3>
-                                <p className="text-sm text-gray-400 leading-relaxed">
-                                    The essential rapid-mastery program. Decode GenAI and build custom tools.
-                                </p>
-                            </div>
+                            {/* Module 2: Community */}
+                            <Link to="/academy" className="group p-8 hover:bg-gray-800 transition-colors flex flex-col justify-center min-h-[140px]">
+                                <span className="text-[9px] font-bold text-green-500 uppercase tracking-widest mb-2 opacity-80">
+                                    Associations
+                                </span>
+                                <h3 className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">
+                                    Community
+                                </h3>
+                                <div className="h-0 group-hover:h-4 overflow-hidden transition-all duration-300">
+                                    <p className="text-[10px] text-gray-400 pt-1">Practitioner Workshops</p>
+                                </div>
+                            </Link>
 
-                            {/* PhyScipreneur */}
-                            <div className="group p-5 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-gold/30 transition-all duration-300">
-                                <div className="text-xs font-bold text-gold uppercase tracking-wider mb-2">No-Code Startup</div>
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-amber-200 transition-colors">PhyScipreneur</h3>
-                                <p className="text-sm text-gray-400 leading-relaxed">
-                                    From Stethoscope to Start-up. Designed by Doctor-Scientists for Doctors.
-                                </p>
-                            </div>
+                            {/* Module 3: Express */}
+                            <Link to="/academy" className="group p-8 hover:bg-gray-800 transition-colors flex flex-col justify-center min-h-[140px]">
+                                <span className="text-[9px] font-bold text-purple-500 uppercase tracking-widest mb-2 opacity-80">
+                                    Sprint: 2 Weeks
+                                </span>
+                                <h3 className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">
+                                    GenAI Express
+                                </h3>
+                                <div className="h-0 group-hover:h-4 overflow-hidden transition-all duration-300">
+                                    <p className="text-[10px] text-gray-400 pt-1">Rapid Mastery Program</p>
+                                </div>
+                            </Link>
+
+                            {/* Module 4: Venture */}
+                            <Link to="/academy" className="group p-8 hover:bg-gray-800 transition-colors flex flex-col justify-center min-h-[140px]">
+                                <span className="text-[9px] font-bold text-gold uppercase tracking-widest mb-2 opacity-80">
+                                    Venture
+                                </span>
+                                <h3 className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors">
+                                    PhyScipreneur
+                                </h3>
+                                <div className="h-0 group-hover:h-4 overflow-hidden transition-all duration-300">
+                                    <p className="text-[10px] text-gray-400 pt-1">No-Code Startup Incubator</p>
+                                </div>
+                            </Link>
+
                         </div>
                     </div>
                 </div>
