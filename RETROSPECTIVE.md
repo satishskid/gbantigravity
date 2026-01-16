@@ -32,4 +32,4 @@ We clarified the mapping between routes, components, and feed handles:
 **Missed Step Resolved**: We initially missed updating `Health.jsx` (`/clinical-ai`) which was pointing to the legacy `@GreyBrain` handle, causing a "Loading stream..." hang. Both Lab and Health now correctly point to `@ClinicalAI`.
 
 ## 4. Typography Rules
-- **Modules**: For 2-line module names (e.g. "Physician-Scientist Entrepreneur"), use `text-xs tracking-tighter` and explicit `<br/>` to force the layout if the text is long.
+- **Modules**: For 2-line module names with long words (e.g. "Physician-Scientist"), use **abbreviations** (e.g., "Phy-Sci-") to maintain standard font sizes (`text-sm` or `text-base`). Avoid reducing font size (`text-xs`) just to fit text, as it breaks visual hierarchy.
