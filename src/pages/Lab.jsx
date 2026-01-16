@@ -140,17 +140,45 @@ export default function Lab() {
                 const newFeeds = {};
                 let allArticles = [];
 
-                feedResults.forEach(result => {
-                    newFeeds[result.id] = result.items;
-                    allArticles = [...allArticles, ...result.items];
+                // 2. Extract Aggregated Intelligence (Model + Prompt)
+                let foundPrompt = null;
+                let foundModel = null;
+
+                // Search through all fetched articles for metadata
+                for (const article of allArticles) {
+                    if (!foundPrompt && article.customPrompt) {
+                        foundPrompt = {
+                            title: article.title,
+                            text: article.customPrompt
+                        };
+                    }
+                    if (!foundModel && article.customModel) {
+                        // Parse the model string "name|tag|desc|url"
+                        const parts = article.customModel.split('|');
+                        if (parts.length >= 3) {
+                            foundModel = {
+                                name: parts[0]?.trim(),
+                                tag: parts[1]?.trim(),
+                                desc: parts[2]?.trim(),
+                                url: parts[3]?.trim() || article.link
+                            };
+                        }
+                    }
+                    if (foundPrompt && foundModel) break;
+                }
+
+                // Fallback to simulation if no metadata found
+                if (!foundModel) {
+                    foundModel = await fetchTrendingModel();
+                }
+                if (!foundPrompt) {
+                    foundPrompt = await generateDailyPrompt(topArticle ? topArticle.title : 'AI in Healthcare');
+                }
+
+                setDailyData({
+                    model: foundModel,
+                    prompt: foundPrompt
                 });
-
-                // Sort purely by date to get the absolute latest across ALL channels
-                allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-                const topArticle = allArticles.length > 0 ? allArticles[0] : null;
-                setHeroArticle(topArticle);
-                setFeeds(newFeeds);
 
                 // 2. Fetch Aggregated Intelligence (Model + Prompt)
                 const [trendingModel, generatedPrompt] = await Promise.all([
