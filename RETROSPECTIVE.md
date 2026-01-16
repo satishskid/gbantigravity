@@ -33,3 +33,4 @@ We clarified the mapping between routes, components, and feed handles:
 
 ## 4. Typography Rules
 - **Modules**: For 2-line module names with long words (e.g. "Physician-Scientist"), use **abbreviations** (e.g., "Phy-Sci-") to maintain standard font sizes (`text-sm` or `text-base`). Avoid reducing font size (`text-xs`) just to fit text, as it breaks visual hierarchy.
+- **Icons**: Watermark icons should use the module's definition color (e.g. Blue for Medical, Gold for Venture) instead of generic gray, with sufficient opacity (15-25%) to be visible branding elements.
