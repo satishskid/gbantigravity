@@ -2,26 +2,15 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink, Play, Info, Copy, Check, Terminal, Cpu } from 'lucide-react';
 import SEO from '../components/SEO';
+import { fetchMediumFeed } from '../utils/mediumService';
 import { fetchTrendingModel, generateDailyPrompt } from '../services/intelligence';
 
 // --- FEEDS ---
-const FEED_URLS = [
-    { name: 'The GreyBrain Protocol', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@GreyBrain', id: 'greybrain' },
-    { name: 'Sage Intelligence', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@Sage_AI', id: 'sage' },
-    { name: 'The GreyBrainer Archives', url: 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@GreyBrainer', id: 'greybrainer' }
+const FEED_CONFIG = [
+    { name: 'The Clinical AI Protocol', url: 'https://medium.com/feed/@ClinicalAI', id: 'greybrain' },
+    { name: 'Sage Intelligence', url: 'https://medium.com/feed/@Sage_AI', id: 'sage' },
+    { name: 'he GreyBrainer Archives', url: 'https://medium.com/feed/@GreyBrainer', id: 'greybrainer' }
 ];
-
-// --- UTILS ---
-const extractImage = (content) => {
-    const imgRegex = /<img.*?src="(.*?)"/;
-    const match = content.match(imgRegex);
-    return match ? match[1] : 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop';
-};
-
-const extractPreview = (content) => {
-    const text = content.replace(/<[^>]+>/g, '');
-    return text.substring(0, 150) + '...';
-};
 
 // --- COMPONENTS ---
 const ArticleCard = ({ article }) => (
@@ -43,7 +32,7 @@ const ArticleCard = ({ article }) => (
                 {article.title}
             </h3>
             <div className="flex items-center gap-2 text-xs text-gray-400">
-                <span>{new Date(article.pubDate).toLocaleDateString()}</span>
+                <span>{article.date}</span>
             </div>
         </div>
     </motion.a>
@@ -137,18 +126,13 @@ export default function Lab() {
     useEffect(() => {
         const fetchContent = async () => {
             try {
-                // 1. Fetch RSS Feeds
+                // 1. Fetch RSS Feeds using Robust Service
                 const feedResults = await Promise.all(
-                    FEED_URLS.map(async (feed) => {
-                        const res = await fetch(feed.url);
-                        const data = await res.json();
+                    FEED_CONFIG.map(async (feed) => {
+                        const items = await fetchMediumFeed(feed.url);
                         return {
                             id: feed.id,
-                            items: data.items?.map(item => ({
-                                ...item,
-                                thumbnail: extractImage(item.content || item['content:encoded']),
-                                preview: extractPreview(item.content || item['content:encoded'])
-                            })) || []
+                            items: items || []
                         };
                     })
                 );
@@ -161,7 +145,8 @@ export default function Lab() {
                     allArticles = [...allArticles, ...result.items];
                 });
 
-                allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+                // Sort purely by date to get the absolute latest across ALL channels
+                allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
 
                 const topArticle = allArticles.length > 0 ? allArticles[0] : null;
                 setHeroArticle(topArticle);
