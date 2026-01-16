@@ -114,8 +114,8 @@ export default function Home() {
                                     </span>
                                 </div>
                                 {/* Watermark Icon */}
-                                <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Activity size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
+                                <div className="absolute inset-0 flex items-center justify-center opacity-15 group-hover:opacity-25 transition-opacity duration-500 pointer-events-none">
+                                    <Activity size={96} strokeWidth={0.5} className="text-blue-500 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
                                     <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
@@ -134,8 +134,8 @@ export default function Home() {
                                         Community
                                     </span>
                                 </div>
-                                <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Users size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
+                                <div className="absolute inset-0 flex items-center justify-center opacity-15 group-hover:opacity-25 transition-opacity duration-500 pointer-events-none">
+                                    <Users size={96} strokeWidth={0.5} className="text-green-500 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
                                     <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
@@ -154,8 +154,8 @@ export default function Home() {
                                         Sprint
                                     </span>
                                 </div>
-                                <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Cpu size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
+                                <div className="absolute inset-0 flex items-center justify-center opacity-15 group-hover:opacity-25 transition-opacity duration-500 pointer-events-none">
+                                    <Cpu size={96} strokeWidth={0.5} className="text-purple-500 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
                                     <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
@@ -174,8 +174,8 @@ export default function Home() {
                                         Venture
                                     </span>
                                 </div>
-                                <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Rocket size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
+                                <div className="absolute inset-0 flex items-center justify-center opacity-15 group-hover:opacity-25 transition-opacity duration-500 pointer-events-none">
+                                    <Rocket size={96} strokeWidth={0.5} className="text-gold -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
                                     <h3 className="text-sm font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
@@ -194,8 +194,8 @@ export default function Home() {
                                         Spirit
                                     </span>
                                 </div>
-                                <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Brain size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
+                                <div className="absolute inset-0 flex items-center justify-center opacity-15 group-hover:opacity-25 transition-opacity duration-500 pointer-events-none">
+                                    <Brain size={96} strokeWidth={0.5} className="text-orange-500 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
                                     <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
@@ -214,8 +214,8 @@ export default function Home() {
                                         Creative
                                     </span>
                                 </div>
-                                <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Film size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
+                                <div className="absolute inset-0 flex items-center justify-center opacity-15 group-hover:opacity-25 transition-opacity duration-500 pointer-events-none">
+                                    <Film size={96} strokeWidth={0.5} className="text-pink-500 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
                                     <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
