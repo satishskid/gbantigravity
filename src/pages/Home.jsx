@@ -107,17 +107,19 @@ export default function Home() {
                         <div className="flex-1 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 divide-y md:divide-y-0 divide-x divide-gray-800 bg-gray-900 border-t xl:border-t-0 border-gray-800">
 
                             {/* Module 1: Institutional */}
-                            <Link to="/academy" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[14rem]">
-                                <span className="text-[9px] font-bold text-blue-500 uppercase tracking-widest opacity-80 z-10 w-full">
-                                    Institutional
-                                </span>
+                            <Link to="/academy" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[16rem]">
+                                <div className="h-8 flex items-center">
+                                    <span className="text-[9px] font-bold text-blue-500 uppercase tracking-widest opacity-80 z-10 w-full">
+                                        Institutional
+                                    </span>
+                                </div>
                                 {/* Watermark Icon */}
                                 <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Activity size={96} strokeWidth={0.5} className="text-gray-500 translate-y-2" />
+                                    <Activity size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
-                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1 min-h-[2.5rem] flex items-end">
-                                        Medical Colleges
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
+                                        Medical<br />Colleges
                                     </h3>
                                     <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
                                         Faculty Curriculum
@@ -126,16 +128,18 @@ export default function Home() {
                             </Link>
 
                             {/* Module 2: Community */}
-                            <Link to="/academy" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[14rem]">
-                                <span className="text-[9px] font-bold text-green-500 uppercase tracking-widest opacity-80 z-10 w-full">
-                                    Community
-                                </span>
+                            <Link to="/academy" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[16rem]">
+                                <div className="h-8 flex items-center">
+                                    <span className="text-[9px] font-bold text-green-500 uppercase tracking-widest opacity-80 z-10 w-full">
+                                        Community
+                                    </span>
+                                </div>
                                 <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Users size={96} strokeWidth={0.5} className="text-gray-500 translate-y-2" />
+                                    <Users size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
-                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1 min-h-[2.5rem] flex items-end">
-                                        Professional Groups
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
+                                        Professional<br />Groups
                                     </h3>
                                     <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
                                         Practitioner Workshops
@@ -144,16 +148,18 @@ export default function Home() {
                             </Link>
 
                             {/* Module 3: Express */}
-                            <Link to="/academy" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[14rem]">
-                                <span className="text-[9px] font-bold text-purple-500 uppercase tracking-widest opacity-80 z-10 w-full">
-                                    Sprint
-                                </span>
+                            <Link to="/academy" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[16rem]">
+                                <div className="h-8 flex items-center">
+                                    <span className="text-[9px] font-bold text-purple-500 uppercase tracking-widest opacity-80 z-10 w-full">
+                                        Sprint
+                                    </span>
+                                </div>
                                 <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Cpu size={96} strokeWidth={0.5} className="text-gray-500 translate-y-2" />
+                                    <Cpu size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
-                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1 min-h-[2.5rem] flex items-end">
-                                        GenAI Express
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
+                                        GenAI<br />Express
                                     </h3>
                                     <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
                                         2-Week Mastery
@@ -162,16 +168,18 @@ export default function Home() {
                             </Link>
 
                             {/* Module 4: Venture */}
-                            <Link to="/academy" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[14rem]">
-                                <span className="text-[9px] font-bold text-gold uppercase tracking-widest opacity-80 z-10 w-full">
-                                    Venture
-                                </span>
+                            <Link to="/academy" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[16rem]">
+                                <div className="h-8 flex items-center">
+                                    <span className="text-[9px] font-bold text-gold uppercase tracking-widest opacity-80 z-10 w-full">
+                                        Venture
+                                    </span>
+                                </div>
                                 <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Rocket size={96} strokeWidth={0.5} className="text-gray-500 translate-y-2" />
+                                    <Rocket size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
-                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1 min-h-[2.5rem] flex items-end">
-                                        PhyScipreneur
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
+                                        Physician-Scientist<br />Entrepreneur
                                     </h3>
                                     <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
                                         No-Code Incubator
@@ -180,16 +188,18 @@ export default function Home() {
                             </Link>
 
                             {/* Module 5: Soul */}
-                            <Link to="/soul" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[14rem]">
-                                <span className="text-[9px] font-bold text-orange-500 uppercase tracking-widest opacity-80 z-10 w-full">
-                                    Spirit
-                                </span>
+                            <Link to="/soul" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[16rem]">
+                                <div className="h-8 flex items-center">
+                                    <span className="text-[9px] font-bold text-orange-500 uppercase tracking-widest opacity-80 z-10 w-full">
+                                        Spirit
+                                    </span>
+                                </div>
                                 <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Brain size={96} strokeWidth={0.5} className="text-gray-500 translate-y-2" />
+                                    <Brain size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
-                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1 min-h-[2.5rem] flex items-end">
-                                        Ancient Wisdom
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
+                                        Ancient<br />Wisdom
                                     </h3>
                                     <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
                                         Cognitive Peace
@@ -198,16 +208,18 @@ export default function Home() {
                             </Link>
 
                             {/* Module 6: Lens */}
-                            <Link to="/lens" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[14rem]">
-                                <span className="text-[9px] font-bold text-pink-500 uppercase tracking-widest opacity-80 z-10 w-full">
-                                    Creative
-                                </span>
+                            <Link to="/lens" className="group relative p-6 hover:bg-gray-800 transition-colors flex flex-col justify-between overflow-hidden min-h-[16rem]">
+                                <div className="h-8 flex items-center">
+                                    <span className="text-[9px] font-bold text-pink-500 uppercase tracking-widest opacity-80 z-10 w-full">
+                                        Creative
+                                    </span>
+                                </div>
                                 <div className="absolute inset-0 flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                                    <Film size={96} strokeWidth={0.5} className="text-gray-500 translate-y-2" />
+                                    <Film size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
-                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-1 min-h-[2.5rem] flex items-end">
-                                        Lens & Cinema
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
+                                        Lens &<br />Cinema
                                     </h3>
                                     <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors">
                                         The Art of AI
