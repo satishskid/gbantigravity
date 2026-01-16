@@ -190,10 +190,8 @@ export default function Lab() {
                     prompt: foundPrompt
                 });
 
-                setDailyData({
-                    model: trendingModel,
-                    prompt: generatedPrompt
-                });
+                setHeroArticle(topArticle);
+                setFeeds(newFeeds);
 
             } catch (error) {
                 console.error("Error loading Lab content:", error);
