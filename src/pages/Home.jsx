@@ -178,7 +178,7 @@ export default function Home() {
                                     <Rocket size={96} strokeWidth={0.5} className="text-gray-300 -translate-y-6" />
                                 </div>
                                 <div className="z-10 mt-auto w-full">
-                                    <h3 className="text-xs tracking-tighter font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
+                                    <h3 className="text-sm font-medium text-gray-200 group-hover:text-white transition-colors leading-tight mb-2 min-h-[2.5rem] flex items-end">
                                         Phy-Sci-<br />Entrepreneur
                                     </h3>
                                     <p className="text-[10px] text-gray-500 group-hover:text-gray-400 transition-colors truncate">
