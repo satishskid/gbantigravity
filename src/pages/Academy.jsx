@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Check, ArrowRight, Zap, Rocket, Users, Star, Mail, Send, MessageCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import medicalAiImg from '../assets/course_medical_ai.png';
@@ -98,10 +99,10 @@ export default function Academy() {
                                         "Deep Research & Paper Writing"
                                     ]} color="text-blue-600" />
 
-                                    <a href={`${EMAIL_CONTACT}?subject=Inquiry: GenAI for Medschools`} className="mt-6 inline-flex items-center text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                    <Link to="/updates" className="mt-6 inline-flex items-center text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                                         <span className="border-b border-gray-300 pb-0.5 group-hover:border-blue-600">Inquire for Institution</span>
                                         <ArrowRight size={14} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -128,10 +129,10 @@ export default function Academy() {
                                         "Automated Admin & Research Support"
                                     ]} color="text-green-600" />
 
-                                    <a href={`${EMAIL_CONTACT}?subject=Inquiry: GenAI for Doctors Group`} className="mt-6 inline-flex items-center text-sm font-bold text-gray-900 group-hover:text-green-600 transition-colors">
+                                    <Link to="/updates" className="mt-6 inline-flex items-center text-sm font-bold text-gray-900 group-hover:text-green-600 transition-colors">
                                         <span className="border-b border-gray-300 pb-0.5 group-hover:border-green-600">Inquire for Group</span>
                                         <ArrowRight size={14} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -254,9 +255,9 @@ export default function Academy() {
                                     Align your dopamine with your Dharma.
                                 </p>
 
-                                <a href={LMS_URL} target="_blank" rel="noopener noreferrer" className="btn bg-white border border-gray-200 text-gray-600 hover:text-orange-600 hover:border-orange-200 px-8 py-4 rounded-xl shadow-sm hover:shadow-md transition-all self-start">
+                                <Link to="/updates" className="btn bg-white border border-gray-200 text-gray-600 hover:text-orange-600 hover:border-orange-200 px-8 py-4 rounded-xl shadow-sm hover:shadow-md transition-all self-start">
                                     Notify Me
-                                </a>
+                                </Link>
                             </div>
                         </motion.div>
 
@@ -337,15 +338,13 @@ export default function Academy() {
                                 Get the latest course drops, industry updates, and research papers directly to your inbox.
                             </p>
 
-                            <a
-                                href={LMS_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <Link
+                                to="/updates"
                                 className="inline-flex items-center justify-center gap-2 btn bg-white text-gray-900 px-8 py-4 rounded-xl hover:bg-gray-100 transition-all font-bold shadow-lg"
                             >
                                 <Mail size={20} />
                                 <span>Subscribe to Updates</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
