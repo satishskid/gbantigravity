@@ -8,6 +8,7 @@ import Lens from './pages/Lens';
 import Academy from './pages/Academy';
 import Lab from './pages/Lab';
 import AdminBroadcast from './pages/AdminBroadcast';
+import Updates from './pages/Updates';
 
 function App() {
     const location = useLocation();
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/academy" element={<Academy />} />
                     <Route path="/lab" element={<Lab />} />
                     <Route path="/admin" element={<AdminBroadcast />} />
+                    <Route path="/updates" element={<Updates />} />
                 </Routes>
             </AnimatePresence>
         </Layout>

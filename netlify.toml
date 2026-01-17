@@ -14,3 +14,10 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[functions."feed-sync"]
+  schedule = "0 * * * *"
