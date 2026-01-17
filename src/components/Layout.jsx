@@ -79,9 +79,9 @@ export default function Layout({ children }) {
               </a>
             </div>
 
-            <a href={PLATFORM_URLS.LEAD_CAPTURE} target="_blank" rel="noopener noreferrer" className="btn btn-primary ml-2 px-6 py-2 text-sm">
+            <Link to="/updates" className="btn btn-primary ml-2 px-6 py-2 text-sm">
               Subscribe
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -114,7 +114,7 @@ export default function Layout({ children }) {
                 </a>
               </div>
 
-              <a href={PLATFORM_URLS.LEAD_CAPTURE} target="_blank" rel="noopener noreferrer" className="block py-3 px-4 text-lg font-medium transition-colors text-gray-600" onClick={() => setMobileMenuOpen(false)}>Subscribe</a>
+              <NavLink to="/updates" mobile onClick={() => setMobileMenuOpen(false)}>Subscribe</NavLink>
             </motion.div>
           )}
         </div>
