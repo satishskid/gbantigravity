@@ -137,6 +137,7 @@ export default function Layout({ children }) {
               <a href={SOCIAL_URLS.WHATSAPP} target="_blank" rel="noopener noreferrer" className="hover:text-[#25D366] transition-colors"><MessageCircle size={18} /></a>
               <div className="w-px h-4 bg-gray-700 mx-2"></div>
               <a href={PLATFORM_URLS.LMS} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">AI School</a>
+              <Link to="/guide" className="hover:text-white transition-colors">The Protocol</Link>
               <a href={SOCIAL_URLS.INSTAGRAM} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Instagram</a>
               <a href={SOCIAL_URLS.LINKEDIN} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">LinkedIn</a>
               <a href={SOCIAL_URLS.FACEBOOK} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Facebook</a>

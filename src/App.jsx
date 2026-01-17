@@ -9,6 +9,7 @@ import Academy from './pages/Academy';
 import Lab from './pages/Lab';
 import AdminBroadcast from './pages/AdminBroadcast';
 import Updates from './pages/Updates';
+import Guide from './pages/Guide';
 
 function App() {
     const location = useLocation();
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/lab" element={<Lab />} />
                     <Route path="/admin" element={<AdminBroadcast />} />
                     <Route path="/updates" element={<Updates />} />
+                    <Route path="/guide" element={<Guide />} />
                 </Routes>
             </AnimatePresence>
         </Layout>
