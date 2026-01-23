@@ -13,7 +13,7 @@ export const handler = async (event, context) => {
 
         // --- CONFIGURATION ---
         // Ideally move these to Netlify Environment Variables (Settings > Build & Deploy > Environment)
-        const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "8481638448:AAFcm73d2xZoNtjY7tVYjBOMX3Qv0tGga-s";
+        const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "8481638448:AAFcm73d2xZoNtjY7tVYjBGMX3Qv0t6ga-s";
         const CHAT_ID = process.env.TELEGRAM_CHANNEL_ID || "-1002968786854";
         // ---------------------
 

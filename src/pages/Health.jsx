@@ -1,9 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal, Loader, Boxes, ExternalLink, Activity, Sparkles } from 'lucide-react';
+import { ArrowRight, Terminal, Loader, Boxes, ExternalLink, Activity, Sparkles, Download, Share2, MessageCircle, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { SOCIAL_URLS } from '../constants';
 import { fetchMediumFeed } from '../utils/mediumService';
+import { toPng } from 'html-to-image';
+import download from 'downloadjs';
+import { QRCodeSVG } from 'qrcode.react';
 
 const INNOVATIONS = [
     {
@@ -30,6 +34,7 @@ export default function Health() {
     // NEW: State for Dynamic Hacks
     const [activePrompt, setActivePrompt] = useState(null);
     const [activeModel, setActiveModel] = useState(null);
+    const cardRef = useRef(null);
 
     useEffect(() => {
         const loadContent = async () => {
@@ -70,6 +75,38 @@ export default function Health() {
         loadContent();
     }, []);
 
+    const handleDownloadCard = async () => {
+        if (cardRef.current === null) {
+            return;
+        }
+
+        try {
+            const dataUrl = await toPng(cardRef.current, { cacheBust: true, pixelRatio: 3 });
+            download(dataUrl, 'GreyBrain-Clinical-Protocol.png');
+        } catch (err) {
+            console.error('Failed to generate image', err);
+        }
+    };
+
+    const handleShare = async () => {
+        const shareData = {
+            title: 'GreyBrain Clinical Protocol',
+            text: `"${activePrompt}"\n\n- Clinical AI Protocol via GreyBrain`,
+            url: window.location.href
+        };
+
+        if (navigator.share) {
+            try {
+                await navigator.share(shareData);
+            } catch (err) {
+                console.log('Error sharing:', err);
+            }
+        } else {
+            navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+            alert('Protocol copied to clipboard!');
+        }
+    };
+
     return (
         <div className="container py-12 md:py-20">
             <SEO title="ClinicalAI" description="AI model reviews, clinical innovations, and intelligent tools." />
@@ -86,6 +123,28 @@ export default function Health() {
                         <div className="flex items-center gap-2 mb-6 text-gray-400 font-bold uppercase tracking-widest text-xs">
                             <Boxes size={16} /> GreyBrain Innovations
                         </div>
+
+                        {/* Clinical Channel Buttons */}
+                        <div className="flex flex-col sm:flex-row items-center gap-4 mb-10 p-6 bg-blue-50/50 rounded-2xl border border-blue-100">
+                            <span className="text-slate-500 font-bold uppercase tracking-widest text-xs hidden sm:block">Join the Signal:</span>
+                            <a
+                                href={SOCIAL_URLS.WHATSAPP}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-5 py-2.5 bg-green-50 text-green-700 rounded-full text-sm font-bold border border-green-200 hover:bg-green-100 transition-all shadow-sm group"
+                            >
+                                <MessageCircle size={18} className="fill-current group-hover:scale-110 transition-transform" /> Medicine
+                            </a>
+                            <a
+                                href={SOCIAL_URLS.TELEGRAM}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-5 py-2.5 bg-sky-50 text-sky-700 rounded-full text-sm font-bold border border-sky-200 hover:bg-sky-100 transition-all shadow-sm group"
+                            >
+                                <Send size={18} className="fill-current group-hover:scale-110 transition-transform" /> Telegram
+                            </a>
+                        </div>
+
                         <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">Clinical Intelligence Suite</h2>
 
                         <div className="grid grid-cols-1 gap-4">
@@ -191,12 +250,21 @@ export default function Health() {
                             <div className="font-mono text-xs bg-gray-800 p-4 rounded-lg mb-4 text-green-400 leading-relaxed border-l-2 border-green-500">
                                 "{activePrompt}"
                             </div>
-                            <button
-                                onClick={() => navigator.clipboard.writeText(activePrompt)}
-                                className="w-full btn bg-white text-gray-900 hover:bg-gray-100 font-bold text-xs py-3 uppercase tracking-wide"
-                            >
-                                Copy Prompt
-                            </button>
+
+                            <div className="flex gap-2">
+                                <button
+                                    onClick={handleDownloadCard}
+                                    className="flex-1 btn bg-white text-gray-900 hover:bg-gray-100 font-bold text-xs py-3 uppercase tracking-wide flex items-center justify-center gap-2"
+                                >
+                                    <Download size={14} /> Save
+                                </button>
+                                <button
+                                    onClick={handleShare}
+                                    className="flex-1 btn bg-gray-800 text-white hover:bg-gray-700 font-bold text-xs py-3 uppercase tracking-wide flex items-center justify-center gap-2"
+                                >
+                                    <Share2 size={14} /> Share
+                                </button>
+                            </div>
                         </div>
 
                         <div className="p-6 bg-blue-50 rounded-2xl border border-blue-100">
@@ -209,6 +277,40 @@ export default function Health() {
                             </Link>
                         </div>
                     </motion.div>
+                </div>
+            </div>
+
+            {/* HIDDEN MATRIX CARD */}
+            <div style={{ position: 'absolute', top: '-9999px', left: '-9999px' }}>
+                <div
+                    ref={cardRef}
+                    className="bg-gray-950 p-12 w-[600px] h-[600px] flex flex-col items-start justify-between border-8 border-gray-900 relative overflow-hidden font-mono"
+                >
+                    {/* Matrix Rain Effect (Static for img) */}
+                    <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(34, 197, 94, .3) 25%, rgba(34, 197, 94, .3) 26%, transparent 27%, transparent 74%, rgba(34, 197, 94, .3) 75%, rgba(34, 197, 94, .3) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(34, 197, 94, .3) 25%, rgba(34, 197, 94, .3) 26%, transparent 27%, transparent 74%, rgba(34, 197, 94, .3) 75%, rgba(34, 197, 94, .3) 76%, transparent 77%, transparent)', backgroundSize: '30px 30px' }}></div>
+
+                    <div className="relative z-10 w-full">
+                        <div className="flex items-center justify-between mb-8 border-b border-green-900 pb-4 w-full">
+                            <div className="flex items-center gap-2 text-green-500 font-bold uppercase tracking-widest text-sm">
+                                <Terminal size={18} /> GREYBRAIN.CLINICAL_AI
+                            </div>
+                            <div className="text-green-800 text-xs">SYS.ROOT.ACCESS</div>
+                        </div>
+
+                        <div className="text-green-400 text-lg leading-relaxed bg-gray-900/50 p-6 rounded-lg border-l-4 border-green-500 mb-4">
+                            "{activePrompt}"
+                        </div>
+                    </div>
+
+                    <div className="relative z-10 w-full flex items-end justify-between mt-8 border-t border-green-900 pt-6">
+                        <div>
+                            <p className="text-sm font-bold text-white uppercase tracking-wide">Daily Clinical Protocol</p>
+                            <p className="text-xs text-gray-500 mt-1">From the desk of @ClinicalAI</p>
+                        </div>
+                        <div className="bg-white p-2 rounded-lg">
+                            <QRCodeSVG value={`https://greybrain.ai/clinical-ai`} size={80} level="M" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
